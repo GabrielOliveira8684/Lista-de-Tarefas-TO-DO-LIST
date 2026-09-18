@@ -28,11 +28,11 @@ python lista.py
 
 Esse projeto foi fundamental para subir um degrau na organização de código e manipulação de coleções em Python:
 
-* Manipulação de Estruturas de Dados: Uso de dicionários para armazenar tarefas em duas categorias (Completas e Incompletas) e listas para armazenar cada tarefa.
-* Modularização com Funções: Criação de função para salvar dados, mantendo o código organizado.
-* Manipulação de Arquivos (I/O): Uso de JSON para persistência de dados, lendo e escrevendo dados externos com `json.load()` e `json.dump()`.
-* Laços de Repetição e Condicionais: Uso de loops `while` e blocos `if/elif/else` para controlar o fluxo do menu principal.
-* Experiência de Usuário no Terminal: Uso da biblioteca `os` e `platform` para limpar a tela de forma multiplataforma (Windows e Linux/Mac) e formatação de strings para criar menus visuais.
-* Tratamento de Exceções: Captura de erros com `try/except` para validação de entrada do usuário e manipulação de índices.
+* **Manipulação de Estruturas de Dados:** Uso de dicionários para armazenar tarefas em duas categorias (Completas e Incompletas) e listas para armazenar cada tarefa.
+* **Modularização com Funções:** Código dividido em funções pequenas, cada uma com uma única responsabilidade (validar entrada, exibir listas, salvar dados, executar ações do menu), evitando repetição e facilitando manutenção.
+* **Manipulação de Arquivos (I/O):** Uso de JSON para persistência de dados, lendo e escrevendo dados externos com `json.load()` e `json.dump()`.
+* **Laços de Repetição e Condicionais:** Uso de loops `while` e blocos `if/elif/else` para controlar o fluxo do menu principal e das ações internas de cada função.
+* **Experiência de Usuário no Terminal:** Uso da biblioteca `os` e `platform` para limpar a tela de forma multiplataforma (Windows e Linux/Mac) e formatação de strings para criar menus visuais.
+* **Tratamento de Exceções:** Captura de erros com `try/except` para validação de entrada do usuário (inclusive letras digitadas no lugar de números) e manipulação de índices fora do intervalo da lista.
 
 Valeu!
