@@ -1,18 +1,20 @@
 # Gerenciador de Tarefas
 
-Um gerenciador de tarefas interativo desenvolvido em Python para consolidar conceitos de manipulação de dados, persistência de arquivos e lógica de controle. O projeto foi estruturado para simular uma aplicação real de produtividade no terminal, garantindo que o usuário possa organizar sua rotina de forma simples e eficiente.
+Um gerenciador de tarefas interativo desenvolvido em Python para praticar manipulação de banco de dados, lógica de controle e organização de código. O projeto simula uma aplicação de produtividade no terminal, onde o usuário organiza sua rotina de forma simples e eficiente.
 
 ## O que ele faz?
 
-A aplicação permite ao usuário gerenciar suas atividades diárias diretamente pelo terminal através de um menu intuitivo.
-* **Gerenciamento Completo (CRUD):** Permite criar, visualizar, marcar como concluída e excluir tarefas da lista.
-* **Interface Organizada:** Limpa o terminal e exibe um menu bem estruturado para fácil navegação.
-* **Persistência de Dados:** Salva as tarefas automaticamente em um arquivo JSON para que os dados não se percam ao fechar o programa.
-* **Tratamento de Erros:** Validação de opções do menu e índices de tarefas, impedindo que o programa feche sozinho caso o usuário digite algo inválido.
+A aplicação permite ao usuário gerenciar suas atividades diárias diretamente pelo terminal, através de um menu intuitivo.
+
+* **Gerenciamento de tarefas:** permite adicionar, listar, marcar como concluída e excluir tarefas.
+* **Listas separadas:** as tarefas são exibidas em duas listas, incompletas e completas, e a exclusão pode ser feita em qualquer uma delas.
+* **Interface organizada:** limpa o terminal a cada volta ao menu e exibe um menu estruturado para facilitar a navegação.
+* **Persistência de dados:** salva as tarefas automaticamente em um banco de dados SQLite (`sistema.db`), então nada se perde ao fechar o programa.
+* **Tratamento de erros:** valida as opções do menu, os números das tarefas e tarefas vazias, impedindo que o programa feche sozinho caso o usuário digite algo inválido.
 
 ## Como rodar
 
-Se você tiver o Python instalado na sua máquina, siga os passos abaixo:
+Não é preciso instalar nada além do Python, porque o `sqlite3` já vem junto com ele.
 
 1. Acesse a pasta do projeto:
 ```bash
@@ -24,15 +26,29 @@ cd TO-DO-LIST
 python lista.py
 ```
 
+O arquivo `sistema.db` é criado automaticamente na primeira execução.
+
+## Estrutura do projeto
+
+```text
+TO-DO-LIST/
+├── lista.py        # Código do gerenciador de tarefas
+├── sistema.db      # Banco de dados SQLite (criado ao rodar)
+└── README.md       # Documentação do projeto
+```
+
 ## O que eu pratiquei e aprendi nesse projeto
 
-Esse projeto foi fundamental para subir um degrau na organização de código e manipulação de coleções em Python:
+Esse projeto foi importante para subir um degrau na organização de código e no uso de banco de dados com Python.
 
-* **Manipulação de Estruturas de Dados:** Uso de dicionários para armazenar tarefas em duas categorias (Completas e Incompletas) e listas para armazenar cada tarefa.
-* **Modularização com Funções:** Código dividido em funções pequenas, cada uma com uma única responsabilidade (validar entrada, exibir listas, salvar dados, executar ações do menu), evitando repetição e facilitando manutenção.
-* **Manipulação de Arquivos (I/O):** Uso de JSON para persistência de dados, lendo e escrevendo dados externos com `json.load()` e `json.dump()`.
-* **Laços de Repetição e Condicionais:** Uso de loops `while` e blocos `if/elif/else` para controlar o fluxo do menu principal e das ações internas de cada função.
-* **Experiência de Usuário no Terminal:** Uso da biblioteca `os` e `platform` para limpar a tela de forma multiplataforma (Windows e Linux/Mac) e formatação de strings para criar menus visuais.
-* **Tratamento de Exceções:** Captura de erros com `try/except` para validação de entrada do usuário (inclusive letras digitadas no lugar de números) e manipulação de índices fora do intervalo da lista.
+* **Banco de dados com SQLite:** uso do módulo `sqlite3` para criar a tabela de tarefas e guardar os dados de forma permanente, com `id`, `titulo` e `status`.
+* **Comandos SQL:** uso de `CREATE TABLE`, `INSERT`, `SELECT`, `UPDATE` e `DELETE` para criar, listar, concluir e remover tarefas.
+* **Consultas seguras:** uso de `?` nos comandos SQL para passar os valores, evitando montar o texto da consulta na mão.
+* **Persistência de dados:** uso de `commit()` para salvar as alterações no banco depois de cada ação.
+* **Modularização com funções:** código dividido em funções pequenas, cada uma com uma responsabilidade (validar entrada, listar tarefas, adicionar, remover, concluir), evitando repetição e facilitando a manutenção.
+* **Laços de repetição e condicionais:** uso de `while` e blocos `if/elif/else` para controlar o menu principal e as ações de cada função.
+* **Listas e tuplas:** uso de `fetchall()` junto com `enumerate()` para listar as tarefas numeradas e descobrir o `id` real de cada uma no banco.
+* **Experiência de usuário no terminal:** uso das bibliotecas `os` e `platform` para limpar a tela em Windows e Linux/Mac, e strings de várias linhas para montar o menu.
+* **Tratamento de exceções:** uso de `try/except` para validar a entrada do usuário, inclusive quando ele digita letras no lugar de números.
 
 Valeu!
