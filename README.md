@@ -50,5 +50,3 @@ Esse projeto foi importante para subir um degrau na organização de código e n
 * **Listas e tuplas:** uso de `fetchall()` junto com `enumerate()` para listar as tarefas numeradas e descobrir o `id` real de cada uma no banco.
 * **Experiência de usuário no terminal:** uso das bibliotecas `os` e `platform` para limpar a tela em Windows e Linux/Mac, e strings de várias linhas para montar o menu.
 * **Tratamento de exceções:** uso de `try/except` para validar a entrada do usuário, inclusive quando ele digita letras no lugar de números.
-
-Valeu!
